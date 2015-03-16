@@ -1,6 +1,17 @@
 #toc   {position:absolute;top:70px;left:10px;}
 #search {position:absolute;top:0px;left:135px;}
 #content {position:absolute;top:0px;left:135px;}
+#loginbox
+{
+    border:3px solid black;
+    text-align:center;
+}
+
+.username
+{
+    font-weight:bold;
+}
+
 IMG {
     border: none;
 }
