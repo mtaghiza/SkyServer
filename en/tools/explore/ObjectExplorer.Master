@@ -1,7 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ObjectExplorer.Master.cs" Inherits="SkyServer.Tools.Explore.ObjectExplorer" %>
 
-<%@ Register TagPrefix="uc" TagName="loginbox" src="login.ascx" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -54,8 +52,7 @@
             <table width="110" cellspacing=0 cellpadding=0>
 	            <tr><td><a class="med" target="_top" href='default.aspx' title="Return to the Explore tool default page">Explore Home</a><br/></td></tr>
                 <tr><td class="s" align="right"><hr width="90"/></td></tr>
-                <tr><td><uc:loginbox ID="loginbox1" runat="server" /></td></tr>
-                <tr><td class="s" align="right"><hr width="90"/></td></tr>
+                
                 <tr><td class="med"><a id="searchLabel" href="#" onclick="toggleSearch();">Search</a></td></tr>
                 <tr><td class="s" align="right"><hr width="90" /></td></tr>
                 <% 

@@ -1793,7 +1793,6 @@
     <Content Include="en\tools\explore\SetSid.aspx" />
     <Content Include="en\tools\explore\Summary.aspx" />
     <Content Include="en\tools\explore\parameters.aspx" />
-    <Content Include="en\tools\explore\login.ascx" />
     <Content Include="en\tools\getimg\Default.aspx" />
     <Content Include="en\tools\getimg\Fields.aspx" />
     <Content Include="en\tools\getimg\GetImgHome.aspx" />
@@ -5670,13 +5669,6 @@
     </Compile>
     <Compile Include="en\tools\explore\Plate.aspx.designer.cs">
       <DependentUpon>Plate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="en\tools\explore\login.ascx.cs">
-      <DependentUpon>login.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="en\tools\explore\login.ascx.designer.cs">
-      <DependentUpon>login.ascx</DependentUpon>
     </Compile>
     <Compile Include="en\tools\getimg\Fields.aspx.cs">
       <DependentUpon>Fields.aspx</DependentUpon>
