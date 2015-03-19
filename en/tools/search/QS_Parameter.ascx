@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="QS_Parameter.ascx.cs" Inherits="SkyServer.Tools.Search.QS_Parameter" %>
 <%@ Import Namespace="SkyServer" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="SkyServer.Tools.Search" %>
 
 	<table BORDER=0 WIDTH="100%" >
 		<tr>
@@ -10,12 +11,12 @@
 		</tr>
 		<tr class='q'>
 			<td ALIGN=left width="20%">Output Format</td>
-			<td nowrap width="13%" ALIGN=middle><input name=format value="html" type=radio class="box" CHECKED>HTML</td>
+			<td nowrap width="13%" ALIGN=middle><input name=format value="html" type=radio class="box" >HTML</td>
 			<td nowrap width="13%" ALIGN=middle><input name=format value="xml"  type=radio class="box">XML</td>
-			<td nowrap width="13%" ALIGN=middle><input name=format value="csv"  type=radio class="box">CSV</td>
-      <td nowrap width="13%" ALIGN=middle><input name=format value="json"  type=radio class="box">JSON</td>
-      <td nowrap width="13%" ALIGN=middle><input name=format value="votable"  type=radio class="box">VOTable</td>
-      <td nowrap width="13%" ALIGN=middle><input name=format value="fits"  type=radio class="box">FITS</td>
+			<td nowrap width="13%" ALIGN=middle><input name=format value="csv"  type=radio class="box" checked>CSV</td>
+            <td nowrap width="13%" ALIGN=middle><input name=format value="json"  type=radio class="box">JSON</td>
+            <td nowrap width="13%" ALIGN=middle><input name=format value="votable"  type=radio class="box">VOTable</td>
+            <td nowrap width="13%" ALIGN=middle><input name=format value="fits"  type=radio class="box">FITS</td>
 		</tr>
 		<tr><td align=center colspan=7>
 			<u>Please see the </u><a href="<%=url%>/help/docs/limits.aspx"><u>Query Limits
@@ -51,14 +52,13 @@
 	</tr></table></td>
   </tr>
 
-    <% using (SqlConnection oConn = new SqlConnection(globals.ConnectionString))
-       {
-           oConn.Open();
+    <% 
+        ResponseREST rs = new ResponseREST();
 
            if (queryType == "irspec")
            {
                Response.Write("<tr><td colspan='2' class='q' align='center'>Infrared Spectra</td></tr>");
-               ResponseAux.showIRSpecParams(oConn, queryType, Response);
+               rs.showIRSpecParams(queryType, Response);
                Response.Write("</tr>\n");
            }   
            else     // this else means: show Imaging and Spectroscopy params only if this is not the Infrared Spectro tool
@@ -77,16 +77,17 @@
 <%           
             if (queryType == "spec")
                 {
-                   ResponseAux.showSpecParams(oConn, queryType, Response);
-                   ResponseAux.showImgParams(oConn, queryType, Response);
+                   rs.showSpecParams(queryType, Response);
+                   rs.showImgParams(queryType, Response);
                }
                else 
                {
-                   ResponseAux.showImgParams(oConn, queryType, Response);
-                   ResponseAux.showSpecParams(oConn, queryType, Response);
+                 
+                 rs.showImgParams(queryType, Response);
+                 rs.showSpecParams(queryType, Response);
                }
            }
-       }
+       
     %>
     </tr>
   </table>

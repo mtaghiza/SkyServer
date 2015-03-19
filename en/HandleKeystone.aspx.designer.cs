@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SkyServer.Tools.Search {
+namespace SkyServer.en {
     
     
-    public partial class X_IRQS {
+    public partial class handleKeystone {
     }
 }
