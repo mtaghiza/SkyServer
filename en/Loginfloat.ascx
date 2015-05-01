@@ -5,10 +5,12 @@
  <script type="text/javascript">
      function keystone_login(logout) {
          if (logout) {
-             window.location.href = "handleKeystone.aspx";
+             window.location.href = "<%=ResolveClientUrl("~/en/HandleKeystone.aspx")%>";
          }
          else {
-             window.location.href = "<%= ConfigurationManager.AppSettings["Keystone.Login"]+Request.Url.AbsoluteUri%>";
+             //window.location.href = "<%= ConfigurationManager.AppSettings["Keystone.Login"]+Request.Url.AbsoluteUri%>";
+             window.location.href = "<%= ConfigurationManager.AppSettings["Keystone.Login"]+ConfigurationManager.AppSettings["skyserverBase"]+Request.Url.AbsolutePath%>";
+             alert(window.location.href);
              }
          }
     </script>
